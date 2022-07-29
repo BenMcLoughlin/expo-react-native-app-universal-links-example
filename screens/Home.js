@@ -3,13 +3,8 @@ import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 import * as Linking from 'expo-linking';
 
 export const Home = ({ navigation }) => {
-
-
-
     return (
         <View style={styles.container}>
-            <Text style={styles.text}>Home</Text>
-    
             <TouchableOpacity style={styles.button}>
                 <Text style={styles.buttonText} onPress={() => navigation.navigate('Product')}>
                     Visit Product Screen

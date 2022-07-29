@@ -6,26 +6,26 @@ import { MaterialCommunityIcons as Icon } from '@expo/vector-icons';
 export const Product = ({ navigation }) => {
     const [url, setUrl] = useState('');
 
-    const _handlePasswordResetUrl = async (event) => {
+    const _getProductId = async (event) => {
         let initialUrl = Linking.parse(event.url);
 
         if (!initialUrl) {
             initialUrl = await Linking.getInitialURL();
         }
+
         setUrl(initialUrl.path);
     };
 
     useEffect(() => {
-        Linking.addEventListener('url', _handlePasswordResetUrl);
+        console.log('Hello from Product');
+        Linking.addEventListener('url', _getProductId);
     }, [navigation]);
 
     return (
         <View style={styles.container}>
-            <Text style={styles.title}>Product</Text>
             <Text style={styles.text}>Url:{url}</Text>
             <TouchableOpacity style={styles.button}>
                 <Icon name="chevron-left" size={25} color="white" />
-
                 <Text style={styles.buttonText} onPress={() => navigation.navigate('Home')}>
                     Visit Home Screen
                 </Text>
@@ -40,9 +40,6 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center',
         flexDirection: 'column'
-    },
-    title: {
-        fontSize: 30
     },
     text: {
         fontSize: 12

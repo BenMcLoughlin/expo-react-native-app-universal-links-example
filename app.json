@@ -2,7 +2,7 @@
   "expo": {
     "name": "react-native-template-universal-links",
     "slug": "react-native-template-universal-links",
-    "version": "1.0.2",
+    "version": "1.0.3",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
     "scheme": "myapp",
@@ -22,7 +22,13 @@
     "ios": {
       "supportsTablet": true,
       "bundleIdentifier": "com.universal-links-test.app",
-      "associatedDomains": ["applinks:expo-universal-links-website-template.vercel.app/"]
+      "associatedDomains": ["applinks:expo-universal-links-website-template.vercel.app/"],
+      "usesIcloudStorage": true,
+      "googleServicesFile": "./GoogleService-Info.plist",
+      "config": {
+        "usesNonExemptEncryption": false,
+        "googleMapsApiKey": "AIzaSyBuXf0KVsxBudMpvQVWOJpaxa6n-1aPzFk"
+      }
     },
     "android": {
       "adaptiveIcon": {
